@@ -17,7 +17,7 @@
 
   // Modulos de rutas
   const booksRoutes = require("./routes/books.routes.js")
-  const productsApiRoutes = require("./routes/productsApi.routes.js")
+  // const productsApiRoutes = require("./routes/productsApi.routes.js")
   const productsRoutes = require("./routes/products.routes.js")
   const entriesApiRoutes = require("./routes/entriesApi.routes.js")
   const authorsApiRoutes = require("./routes/authorsApi.routes.js")
