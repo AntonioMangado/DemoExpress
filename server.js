@@ -35,7 +35,7 @@
   // API
   // app.use(checkApiKey)
   app.use("/api/books", booksRoutes)
-  app.use("/api/products", productsApiRoutes)
+  // app.use("/api/products", productsApiRoutes)
   app.use("/api/entries", entriesApiRoutes)
   app.use("/api/authors", authorsApiRoutes)
   // Web
