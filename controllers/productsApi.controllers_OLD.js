@@ -1,10 +1,11 @@
-const Product = require("../models/products.models")
+const fetchProduct = require("../utils/fetchProducts")
 
     // Read
+    // 
     const getProduct = async (req, res) => {
     try {
         const id = req.params.id || "";
-        let products = id ? await Product.find({id}, "-_id -__v") : await Product.find({}, "-_id -__v") ; //{}
+        let products = await fetchProduct.getProduct(id); //{}
         res.status(200).json(products); // Respuesta de la API para 1 producto
     }
     catch (error) {
@@ -12,21 +13,6 @@ const Product = require("../models/products.models")
         res.status(400).json({msj:`ERROR: ${error.stack}`});
     }
     }
-
-    // CREATE
-    const createProduct = async (req, res) => {
-    console.log(req.body);
-
-    try{
-        const data = req.body;
-        let answer = await new Product(data).save();
-        res.status(201).json(answer);
-
-    }catch (error) {
-        console.log(`ERROR: ${error.stack}`);
-        res.status(400).json({msj:`ERROR: ${error.stack}`});
-    }
-    }   
 
     // Update
     const updateProduct = (req, res) => {
@@ -41,6 +27,5 @@ const Product = require("../models/products.models")
     module.exports = {
         getProduct,
         updateProduct,
-        deleteProduct,
-        createProduct
+        deleteProduct
     };

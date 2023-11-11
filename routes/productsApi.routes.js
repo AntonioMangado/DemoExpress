@@ -12,5 +12,6 @@ const router = require('express').Router()
 router.get('/:id?', (productApiControllers.getProduct));
 router.put("/", (productApiControllers.updateProduct));
 router.delete("/:title?", (productApiControllers.deleteProduct));
+router.post("/", (productApiControllers.createProduct))
 
 module.exports = router;
