@@ -48,8 +48,6 @@
       res.status(404).send("Gatito triste - 404 not found");
   })
 
-listProducts();
-
   // Escuchador de event
   app.listen(port, () => {
     console.log(
