@@ -28,7 +28,7 @@ MongoClient.connect(url, function(err, db) {
 //     db.close();
 // });
 
-  dbo.collection("customers").updateMany({name:/^S/},{$set:{name:"Silvia"}}, function(err, res) {
+  dbo.collection("customers").updateMany({name:/^S/},{$set:{name:"Sara"}}, function(err, res) {
     if (err) throw err;
     console.log("Número de documentos actualizados: " + res.modifiedCount);
     db.close();

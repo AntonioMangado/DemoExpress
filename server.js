@@ -21,6 +21,7 @@
   const productsRoutes = require("./routes/products.routes.js")
   const entriesApiRoutes = require("./routes/entriesApi.routes.js")
   const authorsApiRoutes = require("./routes/authorsApi.routes.js")
+  const providersApiRoutes = require("./routes/providers.routes.js")
 
 
   // Ruta de template
@@ -38,6 +39,7 @@
   app.use("/api/products", productsApiRoutes)
   app.use("/api/entries", entriesApiRoutes)
   app.use("/api/authors", authorsApiRoutes)
+  app.use("/api/providers", providersApiRoutes)
   // Web
   app.use("/products", productsRoutes)
 
@@ -45,6 +47,8 @@
   app.get("*", (req,res) => { 
       res.status(404).send("Gatito triste - 404 not found");
   })
+
+listProducts();
 
   // Escuchador de event
   app.listen(port, () => {
