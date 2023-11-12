@@ -3,10 +3,10 @@ const express = require('express');
 const authorsApiController = require("../controllers/authorsApi.controllers");
 const authorsApiRouter = express.Router();
 
-authorsApiRouter.get('https://demoexpress-htoz.onrender.com/', authorsApiController.getAuthors);
-authorsApiRouter.post("https://demoexpress-htoz.onrender.com/", authorsApiController.createAuthors);
-authorsApiRouter.put("https://demoexpress-htoz.onrender.com/", authorsApiController.updateAuthor);
-authorsApiRouter.delete("https://demoexpress-htoz.onrender.com/", authorsApiController.deleteAuthor);
+authorsApiRouter.get('/', authorsApiController.getAuthors);
+authorsApiRouter.post("/", authorsApiController.createAuthors);
+authorsApiRouter.put("/", authorsApiController.updateAuthor);
+authorsApiRouter.delete("/", authorsApiController.deleteAuthor);
 
 // authorsApiRouter.post('/', authorsApiController.createEntry);
 // authorsApiRouter.put("/", authorsApiController.updateEntry);

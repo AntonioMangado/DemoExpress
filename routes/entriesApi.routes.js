@@ -3,10 +3,10 @@ const express = require('express');
 const entriesApiController = require("../controllers/entriesApi.controllers");
 const entriesApiRouter = express.Router();
 
-entriesApiRouter.get('https://demoexpress-htoz.onrender.com/', entriesApiController.getEntries);
-entriesApiRouter.post('https://demoexpress-htoz.onrender.com/', entriesApiController.createEntry);
-entriesApiRouter.put("https://demoexpress-htoz.onrender.com/", entriesApiController.updateEntry);
-entriesApiRouter.delete("https://demoexpress-htoz.onrender.com/", entriesApiController.deleteEntry);
+entriesApiRouter.get('/', entriesApiController.getEntries);
+entriesApiRouter.post('/', entriesApiController.createEntry);
+entriesApiRouter.put("/", entriesApiController.updateEntry);
+entriesApiRouter.delete("/", entriesApiController.deleteEntry);
 
 module.exports = entriesApiRouter;
 
