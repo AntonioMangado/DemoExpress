@@ -1,6 +1,7 @@
 const express = require('express')
 const bookController = require("../controllers/books.controllers")
 const app = express()
+const {validateCreateBook,validateDeleteBook}= require('../validators/books.validators');
 /**
  * Requerimos express e, inmediatamente después, ejecutamos Router.
  * Este crea una "miniapp". Las funcionalidades son las mismas que el "app" del index, pero
@@ -15,12 +16,12 @@ app.use(express.json()) // Habilito recepción de JSON en servidor.
 router.get("/:title?", (bookController.getBook));
 
 // POST http://localhost:3000/api/books?API_KEY=123abc
-router.post("/", (checkApiKey, bookController.createBook));
+router.post("/", (checkApiKey, validateCreateBook, bookController.createBook));
 
 // PUT http://localhost:3000/api/books?API_KEY=123abc
 router.put("/", (checkApiKey, bookController.editBook));
 
 // DELETE http://localhost:3000/api/books?API_KEY=123abc
-router.delete("/:title?", (checkApiKey, bookController.deleteBook));
+router.delete("/:title?", (checkApiKey, validateDeleteBook, bookController.deleteBook));
 
 module.exports = router

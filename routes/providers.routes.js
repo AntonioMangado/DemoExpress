@@ -11,7 +11,8 @@ const router = require('express').Router()
 
 router.get('/:id?', (providersApiControllers.getProvider));
 // router.put("/", (providersApiControllers.updateProduct));
-// router.delete("/:title?", (providersApiControllers.deleteProduct));
+// router.delete("/:title?", (providersApiControllers.deleteProvider));
 router.post("/", (providersApiControllers.createProvider))
+
 
 module.exports = router;

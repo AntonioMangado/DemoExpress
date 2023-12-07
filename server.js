@@ -49,7 +49,7 @@
   })
 
   // Escuchador de event
-  app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(
         cowsay.say({
             text: `Nos vamos a por tortilla (si queda) Example app listening on port http://localhost:${port}`,
@@ -57,3 +57,5 @@
             T: "U "
         }))
   })
+
+module.exports = server;

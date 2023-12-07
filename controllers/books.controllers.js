@@ -1,5 +1,15 @@
+const {validationResult} = require("express-validator");
+    
     // Create
     const createBook = (req, res) => {
+
+        // Manejo de errores en el body
+        const result = validationResult(req);
+            if (!result.isEmpty()) {
+                return res.send({ errors: result.array() });
+            }
+        
+        // Flujo normal de la app
         console.log(req.body);
         res.status(201).json({
             success:true,
@@ -64,6 +74,14 @@
 
     // Delete
     const deleteBook = (req, res) => {
+
+        // Manejo de errores en el body
+        const result = validationResult(req);
+            if (!result.isEmpty()) {
+                return res.send({ errors: result.array() });
+            }
+        
+        // Flujo normal de la app
         res.status(200).send("Libro borrado!");
     }
 

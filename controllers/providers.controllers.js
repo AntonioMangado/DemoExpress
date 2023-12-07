@@ -33,14 +33,22 @@ const Provider = require("../models/publishers.models")
         res.status(200).send("Producto editado!");
     }
 
-    // Delete
-    const deleteProduct = (req, res) => {
-        res.status(200).send("Producto borrado!");
-    }
+    // // Delete
+    // const deleteProvider = async (req, res) => {
+    //     try {
+    //         const name = req.params.name || "";
+    //         let providers = name ? await Provider.deleteOne({id}) : await Provider.find({}, "-_id -__v") ; //{}
+    //         res.status(200).json(providers); // Respuesta de la API para 1 producto
+    //     }
+    //     catch (error) {
+    //         console.log(`ERROR: ${error.stack}`);
+    //         res.status(400).json({msj:`ERROR: ${error.stack}`});
+    //     }
+    //     }
 
     module.exports = {
         getProvider,
         updateProduct,
-        deleteProduct,
+        // deleteProvider,
         createProvider
     };

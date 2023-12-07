@@ -4,8 +4,8 @@ const Product = require("../models/products.models")
     const getProduct = async (req, res) => {
     try {
         const id = req.params.id || "";
-        let products = id ? await Product.find({id}, "-_id -__v") : await Product.find({}, "-_id -__v") ; //{}
-        res.status(200).json(products); // Respuesta de la API para 1 producto
+        let products = id ? await (Product.find({id}, "-_id -__v"))[0] : await Product.find({}, "-_id -__v") ; //{}
+        res.status(200).json(products || {}); // Respuesta de la API para 1 producto
     }
     catch (error) {
         console.log(`ERROR: ${error.stack}`);
